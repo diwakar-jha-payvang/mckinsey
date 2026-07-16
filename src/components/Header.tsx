@@ -49,24 +49,54 @@ export function Header() {
               {item.hasSubmenu && item.groups && openDropdown === item.label && (
                 <div className="mega-menu">
                   <div className="mega-menu__inner">
-                    {item.groups.map((group) => (
-                      <div key={group.title ?? item.label} className="mega-menu__column">
-                        {group.title && <h3 className="mega-menu__title">{group.title}</h3>}
-                        {group.items.map((child) => (
-                          <Link
-                            key={child.label}
-                            to={child.path}
-                            className="mega-menu__link"
-                            onClick={() => setOpenDropdown(null)}
-                          >
-                            <div className="mega-menu__link-title">{child.label}</div>
-                            {child.description && (
-                              <div className="mega-menu__link-desc">{child.description}</div>
-                            )}
-                          </Link>
+                    <Link
+                      to={item.path}
+                      className="mega-menu__heading"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {item.label}
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </Link>
+
+                    {item.groups.length > 1 ? (
+                      <div className="mega-menu__columns">
+                        {item.groups.map((group) => (
+                          <div key={group.title ?? item.label} className="mega-menu__column">
+                            {group.title && <h3 className="mega-menu__title">{group.title}</h3>}
+                            {group.items.map((child) => (
+                              <Link
+                                key={child.label}
+                                to={child.path}
+                                className="mega-menu__link"
+                                onClick={() => setOpenDropdown(null)}
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </div>
                         ))}
                       </div>
-                    ))}
+                    ) : (
+                      <>
+                        {item.groups[0]?.title && (
+                          <h3 className="mega-menu__title">{item.groups[0].title}</h3>
+                        )}
+                        <div className="mega-menu__flow">
+                          {item.groups[0]?.items.map((child) => (
+                            <Link
+                              key={child.label}
+                              to={child.path}
+                              className="mega-menu__link"
+                              onClick={() => setOpenDropdown(null)}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               )}
