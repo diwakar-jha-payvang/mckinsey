@@ -926,7 +926,7 @@ p {
 }
 
 .footer__bottom {
-  padding: 24px 0;
+  padding: 24px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   justify-content: space-between;

@@ -14,7 +14,7 @@ export const industries: Industry[] = [
     name: 'Aerospace & Defense',
     tagline: 'Navigate complexity and accelerate performance',
     description: 'We help aerospace and defense organizations navigate geopolitical complexity, accelerate innovation, and build resilient supply chains while meeting evolving regulatory and security requirements.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a4cc3f3e?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?w=1200&q=80',
     highlights: ['Defense modernization', 'Supply chain resilience', 'Digital engineering', 'Sustainability in aviation'],
     capabilities: ['Strategy', 'Operations', 'Technology', 'Sustainability'],
   },
