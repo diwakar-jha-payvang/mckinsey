@@ -1,7 +1,22 @@
+import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { footerLinks } from '../data/navigation'
+import { Toast } from './Toast'
 
 export function Footer() {
+  const [email, setEmail] = useState('')
+  const [toastEmail, setToastEmail] = useState<string | null>(null)
+
+  function handleSubscribe(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    const trimmedEmail = email.trim()
+    if (!trimmedEmail) return
+
+    setToastEmail(trimmedEmail)
+    setEmail('')
+  }
+
   return (
     <footer className="footer">
       <div className="footer__newsletter">
@@ -10,12 +25,15 @@ export function Footer() {
             <h3>Stay informed with our latest insights</h3>
             <p>Get our newsletter delivered to your inbox with the latest thinking on business and management.</p>
           </div>
-          <form className="footer__form" onSubmit={(e) => e.preventDefault()}>
+          <form className="footer__form" onSubmit={handleSubscribe}>
             <input
               type="email"
               className="footer__input"
               placeholder="Enter your email"
               aria-label="Email address"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              required
             />
             <button type="submit" className="btn btn--footer">
               Subscribe
@@ -79,6 +97,14 @@ export function Footer() {
           ))}
         </div>
       </div>
+
+      {toastEmail && (
+        <Toast
+          message="Subscribed successfully"
+          email={toastEmail}
+          onClose={() => setToastEmail(null)}
+        />
+      )}
     </footer>
   )
 }
