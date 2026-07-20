@@ -60,7 +60,7 @@ export function IndustryDetailPage() {
           <div className="detail-content__main">
             <p>{industry.description}</p>
             <p>
-              Our teams combine sector knowledge with functional expertise to help clients navigate disruption, accelerate growth, and build lasting competitive advantage.
+              Our teams combine deep industry knowledge with functional expertise to help clients navigate disruption, accelerate growth, and build lasting competitive advantage.
             </p>
           </div>
           <aside className="detail-sidebar">
