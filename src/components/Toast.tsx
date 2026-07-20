@@ -2,11 +2,11 @@ import { useEffect } from 'react'
 
 interface ToastProps {
   message: string
-  email: string
+  detail?: string
   onClose: () => void
 }
 
-export function Toast({ message, email, onClose }: ToastProps) {
+export function Toast({ message, detail, onClose }: ToastProps) {
   useEffect(() => {
     const timer = window.setTimeout(onClose, 4000)
     return () => window.clearTimeout(timer)
@@ -19,7 +19,7 @@ export function Toast({ message, email, onClose }: ToastProps) {
       </div>
       <div className="toast__body">
         <p className="toast__title">{message}</p>
-        <p className="toast__email">{email}</p>
+        {detail && <p className="toast__detail">{detail}</p>}
       </div>
       <button type="button" className="toast__close" onClick={onClose} aria-label="Close">
         ×

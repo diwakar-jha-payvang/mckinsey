@@ -1,4 +1,6 @@
+import { useState, type FormEvent } from 'react'
 import { Breadcrumb } from '../components/Breadcrumb'
+import { Toast } from '../components/Toast'
 
 const offices = [
   { city: 'New York', address: '711 Third Avenue, New York, NY 10017', phone: '+1 212 415 1000' },
@@ -7,6 +9,14 @@ const offices = [
 ]
 
 export function ContactPage() {
+  const [showToast, setShowToast] = useState(false)
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    event.currentTarget.reset()
+    setShowToast(true)
+  }
+
   return (
     <>
       <div className="page-header page-header--contact">
@@ -24,7 +34,7 @@ export function ContactPage() {
           <div className="contact-grid">
             <div>
               <h2 style={{ marginBottom: 24 }}>Send us a message</h2>
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="firstName">First name</label>
                   <input type="text" id="firstName" name="firstName" required />
@@ -77,6 +87,14 @@ export function ContactPage() {
           </div>
         </div>
       </section>
+
+      {showToast && (
+        <Toast
+          message="Form submitted successfully"
+          detail="We will contact you soon."
+          onClose={() => setShowToast(false)}
+        />
+      )}
     </>
   )
 }

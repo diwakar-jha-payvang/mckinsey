@@ -1071,7 +1071,7 @@ p {
   line-height: 1.3;
 }
 
-.toast__email {
+.toast__detail {
   font-family: var(--mck-sans);
   font-size: 14px;
   color: var(--mck-text-muted);

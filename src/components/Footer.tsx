@@ -101,7 +101,7 @@ export function Footer() {
       {toastEmail && (
         <Toast
           message="Subscribed successfully"
-          email={toastEmail}
+          detail={toastEmail}
           onClose={() => setToastEmail(null)}
         />
       )}
