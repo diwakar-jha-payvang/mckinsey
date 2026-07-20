@@ -59,10 +59,12 @@ export function BlogPage() {
                 <div className="article-card__image">
                   <img src={post.image} alt="" loading="lazy" />
                 </div>
-                <div className="article-card__category">{post.category}</div>
-                <h3 className="article-card__title">{post.title}</h3>
-                <p className="article-card__excerpt">{post.excerpt}</p>
-                <div className="article-card__meta">{post.date}</div>
+                <div className="article-card__body">
+                  <div className="article-card__category">{post.category}</div>
+                  <h3 className="article-card__title">{post.title}</h3>
+                  <p className="article-card__excerpt">{post.excerpt}</p>
+                  <div className="article-card__meta">{post.date}</div>
+                </div>
               </Link>
             ))}
           </div>

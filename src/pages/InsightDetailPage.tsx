@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { Breadcrumb } from '../components/Breadcrumb'
 import { ArticleCard } from '../components/ArticleCard'
-import { getInsightBySlug, insights } from '../data/insights'
+import { getInsightBySlug, getRelatedInsights } from '../data/insights'
 
 export function InsightDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -18,9 +18,7 @@ export function InsightDetailPage() {
     )
   }
 
-  const related = insights
-    .filter((i) => i.slug !== article.slug && i.category === article.category)
-    .slice(0, 3)
+  const related = getRelatedInsights(article.slug, 3)
 
   return (
     <>

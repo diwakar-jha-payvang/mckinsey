@@ -112,3 +112,32 @@ export function getInsightBySlug(slug: string): Insight | undefined {
 export function getFeaturedInsights(): Insight[] {
   return insights.filter((i) => i.featured)
 }
+
+/** Prefer same-category articles, then fill from the rest until `count` cards. */
+export function getRelatedInsights(
+  excludeSlug: string,
+  count = 3,
+  preferredSlugs: string[] = [],
+): Insight[] {
+  const preferred = preferredSlugs
+    .map((s) => getInsightBySlug(s))
+    .filter((i): i is Insight => Boolean(i) && i.slug !== excludeSlug)
+
+  const current = getInsightBySlug(excludeSlug)
+  const sameCategory = insights.filter(
+    (i) =>
+      i.slug !== excludeSlug &&
+      current &&
+      i.category === current.category &&
+      !preferred.some((p) => p.slug === i.slug),
+  )
+
+  const rest = insights.filter(
+    (i) =>
+      i.slug !== excludeSlug &&
+      !preferred.some((p) => p.slug === i.slug) &&
+      !sameCategory.some((p) => p.slug === i.slug),
+  )
+
+  return [...preferred, ...sameCategory, ...rest].slice(0, count)
+}

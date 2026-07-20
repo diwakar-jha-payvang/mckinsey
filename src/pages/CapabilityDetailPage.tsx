@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Breadcrumb } from '../components/Breadcrumb'
 import { ArticleCard } from '../components/ArticleCard'
 import { getCapabilityBySlug } from '../data/capabilities'
-import { getInsightBySlug } from '../data/insights'
+import { getRelatedInsights } from '../data/insights'
 import { mainNav } from '../data/navigation'
 
 const capabilitiesNav = mainNav.find((n) => n.label === 'Capabilities')
@@ -22,7 +22,11 @@ function getCapabilityFromNav(slug: string) {
       { title: 'Implementation', description: 'Hands-on support to deliver results' },
       { title: 'Capability Building', description: 'Embed new skills and ways of working' },
     ],
-    relatedInsights: ['ai-enterprise-transformation', 'sustainable-growth-strategy'],
+    relatedInsights: [
+      'ai-enterprise-transformation',
+      'sustainable-growth-strategy',
+      'future-of-work-2026',
+    ],
   }
 }
 
@@ -41,9 +45,7 @@ export function CapabilityDetailPage() {
     )
   }
 
-  const relatedArticles = capability.relatedInsights
-    .map((s) => getInsightBySlug(s))
-    .filter(Boolean)
+  const relatedArticles = getRelatedInsights('', 3, capability.relatedInsights)
 
   return (
     <>
@@ -95,7 +97,7 @@ export function CapabilityDetailPage() {
             </div>
             <div className="card-grid">
               {relatedArticles.map((article) => (
-                <ArticleCard key={article!.id} article={article!} />
+                <ArticleCard key={article.id} article={article} />
               ))}
             </div>
           </div>

@@ -21,7 +21,11 @@ export const capabilities: Capability[] = [
       { title: 'Portfolio Strategy', description: 'Optimize business mix and capital allocation' },
       { title: 'Growth Strategy', description: 'Identify and capture new growth opportunities' },
     ],
-    relatedInsights: ['sustainable-growth-strategy', 'ai-enterprise-transformation'],
+    relatedInsights: [
+      'sustainable-growth-strategy',
+      'ai-enterprise-transformation',
+      'future-of-work-2026',
+    ],
   },
   {
     slug: 'operations',
@@ -35,7 +39,11 @@ export const capabilities: Capability[] = [
       { title: 'Procurement', description: 'Transform sourcing and supplier management' },
       { title: 'Service Operations', description: 'Improve customer-facing operations' },
     ],
-    relatedInsights: ['supply-chain-resilience'],
+    relatedInsights: [
+      'supply-chain-resilience',
+      'ai-enterprise-transformation',
+      'sustainable-growth-strategy',
+    ],
   },
   {
     slug: 'marketing-sales',
@@ -49,7 +57,11 @@ export const capabilities: Capability[] = [
       { title: 'Digital Marketing', description: 'Build data-driven marketing capabilities' },
       { title: 'Sales Excellence', description: 'Equip sales teams to outperform' },
     ],
-    relatedInsights: ['consumer-trends-2026'],
+    relatedInsights: [
+      'consumer-trends-2026',
+      'ai-enterprise-transformation',
+      'sustainable-growth-strategy',
+    ],
   },
   {
     slug: 'sustainability',
@@ -63,7 +75,11 @@ export const capabilities: Capability[] = [
       { title: 'ESG Strategy', description: 'Integrate ESG into corporate strategy' },
       { title: 'Green Growth', description: 'Capture opportunities in the green transition' },
     ],
-    relatedInsights: ['sustainable-growth-strategy'],
+    relatedInsights: [
+      'sustainable-growth-strategy',
+      'supply-chain-resilience',
+      'consumer-trends-2026',
+    ],
   },
   {
     slug: 'people',
@@ -77,7 +93,11 @@ export const capabilities: Capability[] = [
       { title: 'Culture Transformation', description: 'Build cultures that drive performance' },
       { title: 'Leadership Development', description: 'Develop leaders at every level' },
     ],
-    relatedInsights: ['future-of-work-2026'],
+    relatedInsights: [
+      'future-of-work-2026',
+      'ai-enterprise-transformation',
+      'sustainable-growth-strategy',
+    ],
   },
   {
     slug: 'implementation',
@@ -91,7 +111,11 @@ export const capabilities: Capability[] = [
       { title: 'Performance Management', description: 'Track and sustain results' },
       { title: 'Change Management', description: 'Engage people through transformation' },
     ],
-    relatedInsights: ['ai-enterprise-transformation'],
+    relatedInsights: [
+      'ai-enterprise-transformation',
+      'future-of-work-2026',
+      'sustainable-growth-strategy',
+    ],
   },
   {
     slug: 'tech-ai',
@@ -105,7 +129,11 @@ export const capabilities: Capability[] = [
       { title: 'Digital Transformation', description: 'Modernize technology and ways of working' },
       { title: 'Data & Analytics', description: 'Turn data into actionable insights' },
     ],
-    relatedInsights: ['ai-enterprise-transformation'],
+    relatedInsights: [
+      'ai-enterprise-transformation',
+      'future-of-work-2026',
+      'supply-chain-resilience',
+    ],
   },
 ]
 

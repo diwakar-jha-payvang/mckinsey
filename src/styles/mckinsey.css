@@ -1123,12 +1123,12 @@ p {
   display: flex;
   flex-direction: column;
   background: var(--mck-bg-white);
+  height: 100%;
 }
 
 .article-card__image {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  margin-bottom: 16px;
   background: var(--mck-bg-light);
 }
 
@@ -1141,6 +1141,13 @@ p {
 
 .article-card:hover .article-card__image img {
   transform: scale(1.03);
+}
+
+.article-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 24px 24px;
 }
 
 .article-card__category {

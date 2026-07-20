@@ -12,13 +12,15 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
       <div className="article-card__image">
         <img src={article.image} alt="" loading="lazy" />
       </div>
-      <div className="article-card__category">{article.category}</div>
-      <h3 className="article-card__title">{article.title}</h3>
-      {variant === 'default' && (
-        <p className="article-card__excerpt">{article.excerpt}</p>
-      )}
-      <div className="article-card__meta">
-        {article.date} · {article.readTime}
+      <div className="article-card__body">
+        <div className="article-card__category">{article.category}</div>
+        <h3 className="article-card__title">{article.title}</h3>
+        {variant === 'default' && (
+          <p className="article-card__excerpt">{article.excerpt}</p>
+        )}
+        <div className="article-card__meta">
+          {article.date} · {article.readTime}
+        </div>
       </div>
     </Link>
   )

@@ -44,8 +44,10 @@ export function CapabilitiesPage() {
                 <div className="article-card__image">
                   <img src={cap.image} alt="" loading="lazy" />
                 </div>
-                <h3 className="article-card__title">{cap.name}</h3>
-                <p className="article-card__excerpt">{cap.tagline}</p>
+                <div className="article-card__body">
+                  <h3 className="article-card__title">{cap.name}</h3>
+                  <p className="article-card__excerpt">{cap.tagline}</p>
+                </div>
               </Link>
             ))}
           </div>
