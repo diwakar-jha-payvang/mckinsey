@@ -1518,6 +1518,15 @@ p {
   margin-bottom: 1.5rem;
 }
 
+.legal-page__section {
+  margin-bottom: 40px;
+}
+
+.legal-page__section h2 {
+  font-size: 1.375rem;
+  margin-bottom: 16px;
+}
+
 /* Careers */
 .careers-hero {
   background: var(--mck-navy);

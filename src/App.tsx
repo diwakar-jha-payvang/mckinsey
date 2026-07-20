@@ -12,6 +12,7 @@ import { AboutPage } from './pages/AboutPage'
 import { CareersPage } from './pages/CareersPage'
 import { ContactPage } from './pages/ContactPage'
 import { BlogPage } from './pages/BlogPage'
+import { LegalPage } from './pages/LegalPage'
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/privacy-policy" element={<LegalPage />} />
+          <Route path="/cookie-preferences" element={<LegalPage />} />
+          <Route path="/terms-of-use" element={<LegalPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -189,9 +189,8 @@ export const footerLinks = {
     { label: 'Locations', path: '/about#locations' },
   ],
   legal: [
-    { label: 'Privacy Policy', path: '/contact' },
-    { label: 'Cookie Preferences', path: '/contact' },
-    { label: 'Terms of Use', path: '/contact' },
-    { label: 'Accessibility', path: '/contact' },
+    { label: 'Privacy Policy', path: '/privacy-policy' },
+    { label: 'Cookie Preferences', path: '/cookie-preferences' },
+    { label: 'Terms of Use', path: '/terms-of-use' },
   ],
 }
